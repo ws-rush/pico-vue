@@ -7,7 +7,6 @@
 ## Status
 
 - `petite-vue` is not maintained anymore, hence we will provide bug fixes and handle feature requests. Feel free to open an issue or PR.
-- This fork is focused on web components, but we will provide new generic features too.
 
 ## Documentation
 
