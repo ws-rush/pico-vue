@@ -51,15 +51,18 @@ export default withMermaid(
                         { text: 'API Reference', link: '/essentials/api-reference' }
                     ]
                 },
-                {
-                    text: 'Guides',
-                    items: [
-                        { text: 'State Management', link: '/guides/state-management' },
-                        { text: 'Server Integration', link: '/guides/server-integration' },
-                        { text: 'Form Handling', link: '/guides/form-handling' }
-                    ]
-                },
-                {
+                            {
+                                text: 'Guides',
+                                items: [
+                                    { text: 'State Management', link: '/guides/state-management' },
+                                    { text: 'Server Integration', link: '/guides/server-integration' },
+                                    { text: 'Django', link: '/guides/django' },
+                                    { text: 'Rails', link: '/guides/rails' },
+                                    { text: 'Laravel', link: '/guides/laravel' },
+                                    { text: 'ASP.NET Core', link: '/guides/aspnet' },
+                                    { text: 'Form Handling', link: '/guides/form-handling' }
+                                ]
+                            },                {
                     text: 'Directives',
                     items: [
                         { text: 'v-bind', link: '/directives/v-bind' },
