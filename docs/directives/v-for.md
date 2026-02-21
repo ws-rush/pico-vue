@@ -1,69 +1,112 @@
 # v-for
 
-Render the element or template block multiple times based on the source data.
+`v-for` is used to render a list of elements by iterating over an array or an object.
 
-## Usage
-
-### Array
+## Basic Usage
 
 ```html
-<div v-scope="{ items: [{ message: 'Foo' }, { message: 'Bar' }] }">
-  <div v-for="item in items">
-    {{ item.message }}
-  </div>
+<div v-scope="{ items: ['Apple', 'Banana', 'Cherry'] }">
+  <ul>
+    <li v-for="item in items">{{ item }}</li>
+  </ul>
 </div>
 ```
 
-With index:
+---
+
+## Array Iteration
+
+### Accessing Index
+You can access the current index by using the `(item, index)` syntax.
 
 ```html
 <div v-for="(item, index) in items">
-  {{ index }} - {{ item.message }}
+  {{ index + 1 }}. {{ item }}
 </div>
 ```
 
-### Object
+### Array of Objects
+Iteration works seamlessly with arrays of objects.
 
 ```html
-<div v-scope="{ myObject: { title: 'How to do lists in Vue', author: 'Jane Doe', publishedAt: '2016-04-10' } }">
-  <div v-for="(value, key) in myObject">
-    {{ key }}: {{ value }}
+<div v-for="user in users">
+  <p>{{ user.name }} ({{ user.email }})</p>
+</div>
+```
+
+---
+
+## Object Iteration
+
+`v-for` can also be used to iterate over the properties of an object. The order of iteration is consistent with `Object.keys()`.
+
+```html
+<div v-scope="{ myObject: { title: 'Guide', author: 'Jane', year: 2025 } }">
+  <div v-for="(value, key, index) in myObject">
+    {{ index }}. {{ key }}: {{ value }}
   </div>
 </div>
 ```
 
-### Range
+---
 
-You can also iterate over an integer:
+## Iterating Over a Range
+
+You can also use an integer with `v-for`. The count starts at `1`.
 
 ```html
 <span v-for="n in 10">{{ n }} </span>
 ```
 
-### on `<template>`
+---
 
-Similar to `v-if`, you can also use a `<template>` tag to render a block of multiple elements.
+## Nested Loops
+
+`v-for` can be nested to iterate over multi-dimensional data structures.
+
+```html
+<div v-for="category in categories">
+  <h3>{{ category.name }}</h3>
+  <ul>
+    <li v-for="item in category.items">
+      {{ item.name }}
+    </li>
+  </ul>
+</div>
+```
+
+---
+
+## Using `v-for` with `<template>`
+
+Use a `<template>` tag if you need to repeat a block of multiple elements.
 
 ```html
 <ul>
   <template v-for="item in items">
-    <li>{{ item.msg }}</li>
+    <li class="item">{{ item.text }}</li>
     <li class="divider" role="presentation"></li>
   </template>
 </ul>
 ```
 
-## Key
+---
 
-It is recommended to provide a unique `key` attribute for each item with `:key`. This helps pocket-vue optimize rendering when the list changes.
+## Importance of `:key`
 
+It is highly recommended to provide a unique `key` attribute for each item using `:key`. This allows pocket-vue to efficiently track and reuse elements when the list changes.
 
 ```html
 <div v-for="item in items" :key="item.id">
-  <!-- content -->
+  {{ item.text }}
 </div>
 ```
 
+Without a unique key, pocket-vue will use a "patch in-place" strategy which can lead to unexpected behavior with stateful elements (like input fields) or CSS transitions.
+
+---
+
 ## Limitations
 
-In pocket-vue, `v-for` does not support deep destructuring in the alias expression (e.g. `v-for="{ id } in items"` is not supported).
+- **Deep Destructuring**: pocket-vue supports basic destructuring (e.g., `v-for="[id, name] in items"`) but does not support complex nested destructuring.
+- **`v-for` with `v-if`**: Unlike standard Vue, `v-for` takes precedence over `v-if` in pocket-vue when used on the same element. It's generally better to use a wrapper or filter the list in your scope.

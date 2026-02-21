@@ -1,6 +1,6 @@
 # v-bind
 
-Dynamically bind one or more attributes, or a component prop to an expression.
+`v-bind` is used to dynamically bind one or more attributes to an expression. It's one of the most fundamental directives in pocket-vue.
 
 ## Shorthand
 
@@ -8,52 +8,92 @@ The `:` character is a shorthand for `v-bind`.
 
 ```html
 <!-- full syntax -->
-<a v-bind:href="url"> ... </a>
+<a v-bind:href="url">Link</a>
 
-<!-- shorthand -->
-<a :href="url"> ... </a>
+<!-- shorthand (preferred) -->
+<a :href="url">Link</a>
 ```
+
+---
+
+## Attribute Binding
+
+You can bind any HTML attribute to a reactive value. If the bound value is `null`, `undefined`, or `false`, the attribute will be removed.
+
+```html
+<div v-scope="{ title: 'Hello World', isDisabled: true }">
+  <div :title="title">Hover over me</div>
+  <button :disabled="isDisabled">Cannot Click Me</button>
+</div>
+```
+
+### Boolean Attributes
+For boolean attributes like `disabled`, `checked`, `required`, etc., the attribute will be present if the expression is truthy and removed if falsy.
+
+---
 
 ## Class Binding
 
-You can pass an object to `:class` to dynamically toggle classes:
+### Object Syntax
+Pass an object to `:class` to dynamically toggle classes. The key is the class name, and the value is a boolean that determines if the class should be applied.
 
 ```html
-<div :class="{ active: isActive }"></div>
+<div :class="{ active: isActive, 'text-danger': hasError }"></div>
 ```
 
-You can also pass an array to apply a list of classes:
+### Array Syntax
+Pass an array of class names. You can also nest objects inside the array.
 
 ```html
-<div :class="[activeClass, errorClass]"></div>
+<div :class="[activeClass, { 'is-loading': isLoading }]"></div>
 ```
 
-## Boolean Attributes
-
-If the bound value is `null`, `undefined`, or `false`, the attribute will be removed. If it is `true`, the attribute will be present.
-
-```html
-<button :disabled="isFormInvalid">Submit</button>
-```
+---
 
 ## Style Binding
 
-You can pass an object to `:style`:
+### Object Syntax
+Pass an object to `:style`. You can use either camelCase (recommended) or kebab-case for the CSS property names.
 
 ```html
 <div :style="{ color: activeColor, fontSize: fontSize + 'px' }"></div>
 ```
 
-You can also use an array of style objects:
+### Array Syntax
+Pass an array of style objects to apply multiple sets of styles.
 
 ```html
-<div :style="[baseStyles, overridingStyles]"></div>
+<div :style="[baseStyles, themeStyles]"></div>
 ```
+
+### CSS Custom Properties
+You can also bind to CSS variables.
+
+```html
+<div :style="{ '--main-color': color }"></div>
+```
+
+---
 
 ## Modifiers
 
-- `.camel`: convert the attribute name to camelCase.
+### `.camel`
+The `.camel` modifier converts the attribute name to camelCase. This is primarily useful for SVG attributes like `viewBox`.
 
 ```html
+<!-- Renders as viewBox="0 0 100 100" -->
 <svg :view-box.camel="viewBox"></svg>
 ```
+
+---
+
+## Dynamic Binding of Multiple Attributes
+
+You can bind an entire object of attributes by using `v-bind` without an argument.
+
+```html
+<div v-scope="{ attrObj: { id: 'container', class: 'wrapper' } }">
+  <div v-bind="attrObj"></div>
+</div>
+```
+

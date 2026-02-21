@@ -1,6 +1,6 @@
 # v-on
 
-Attaches an event listener to the element.
+`v-on` is used to attach event listeners to elements. It supports both inline expressions and method calls from your scope.
 
 ## Shorthand
 
@@ -8,37 +8,61 @@ The `@` character is a shorthand for `v-on`.
 
 ```html
 <!-- full syntax -->
-<button v-on:click="doSomething"> ... </button>
+<button v-on:click="doSomething">Click Me</button>
 
-<!-- shorthand -->
-<button @click="doSomething"> ... </button>
+<!-- shorthand (preferred) -->
+<button @click="doSomething">Click Me</button>
 ```
 
-## Usage
+---
 
-Inline handler:
+## Event Handlers
+
+### Inline Handlers
+You can write JavaScript expressions directly in the `@` directive.
 
 ```html
-<button @click="count++">Add 1</button>
+<button @click="count++">Increment: {{ count }}</button>
 ```
 
-Method handler:
+### Method Handlers
+If the logic is complex, you should use a method defined in your `v-scope`.
 
 ```html
-<button @click="greet">Greet</button>
+<div v-scope="{ greet(name) { alert('Hello ' + name) } }">
+  <button @click="greet('User')">Greet</button>
+</div>
 ```
 
-## Modifiers
+---
 
-- `.stop` - call `event.stopPropagation()`.
-- `.prevent` - call `event.preventDefault()`.
-- `.capture` - add event listener in capture mode.
-- `.self` - only trigger handler if event was dispatched from this element.
-- `.once` - trigger handler at most once.
-- `.left` - only trigger handler for left button mouse events.
-- `.right` - only trigger handler for right button mouse events.
-- `.middle` - only trigger handler for middle button mouse events.
-- `.passive` - attaches a DOM event with `{ passive: true }`.
+## Accessing the Original Event
+
+If you need the original DOM event object in an inline handler, you can pass the special `$event` variable.
+
+```html
+<button @click="handleClick($event)">Click Me</button>
+```
+
+If using a method handler, the event is automatically passed as the first argument if no arguments are provided in the template.
+
+```html
+<button @click="handleClick">Click Me</button>
+<!-- handleClick(event) will be called -->
+```
+
+---
+
+## Event Modifiers
+
+Pocket-vue provides modifiers to simplify common event handling tasks. Modifiers are postfixed with a dot.
+
+- `.stop`: Calls `event.stopPropagation()`
+- `.prevent`: Calls `event.preventDefault()`
+- `.self`: Only triggers the handler if the event was dispatched from the element itself (not a child)
+- `.once`: The handler will be triggered at most once
+- `.capture`: Adds the listener in capture mode
+- `.passive`: Adds the listener with `{ passive: true }`
 
 ```html
 <!-- the click event's propagation will be stopped -->
@@ -51,29 +75,38 @@ Method handler:
 <a @click.stop.prevent="doThat"></a>
 ```
 
-## Key Modifiers
+### Keyboard Modifiers
+You can use any valid key name (in kebab-case) as a modifier for keyboard events.
 
 ```html
-<!-- only call `submit` when the `key` is `Enter` -->
-<input @keyup.enter="submit" />
+<!-- Only call `submit` when the `key` is `Enter` -->
+<input @keyup.enter="submit">
+
+<!-- Works with other keys too -->
+<input @keyup.page-down="onPageDown">
 ```
 
-## Accessing Original Event
+### Mouse Button Modifiers
+Restrict handlers to specific mouse buttons.
 
-In an inline handler, the original DOM event is available as `$event`.
+- `.left`
+- `.right`
+- `.middle`
 
 ```html
-<button @click="warn('Form cannot be submitted yet.', $event)">
-  Submit
-</button>
+<button @click.right="showMenu">Right click for menu</button>
 ```
 
-## Multiple Handlers
+---
 
-You can bind multiple methods in a comma-separated list.
+## Special Lifecycle Events
+
+Pocket-vue emits special events when an element is mounted or unmounted. These **must** be prefixed with `vue:`.
+
+- `@vue:mounted`: Fired when the element is mounted to the DOM.
+- `@vue:unmounted`: Fired when the element is removed from the DOM.
 
 ```html
-<button @click="one($event), two($event)">
-  Submit
-</button>
+<input @vue:mounted="$el.focus()">
 ```
+
