@@ -68,4 +68,4 @@ count.value++ // prints 1
 - **Use `reactive` for state objects**: This is the most common pattern for defining your application state.
 - **Use `ref` for primitive values**: Use `ref` for single values like strings, numbers, or booleans.
 - **Always access `.value` on refs**: Remember that refs are objects and you must use the `.value` property to access or modify their content in JavaScript code.
-- **No `.value` needed in templates**: pocket-vue automatically unwraps refs in your templates, so you can just use `{{ count }}` instead of `{{ count.value }}`.
+- **No `.value` needed in templates**: pocket-vue automatically unwraps refs in your templates, so you can just use <code v-pre>{{ count }}</code> instead of <code v-pre>{{ count.value }}</code>.

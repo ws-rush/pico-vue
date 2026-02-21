@@ -159,9 +159,13 @@ Removes the attribute once the app is mounted. Used for hiding uncompiled templa
 
 Skips compilation for this element and all its children.
 
+<div v-pre>
+
 ```html
 <div v-pre>{{ this will not be compiled }}</div>
 ```
+
+</div>
 
 ### `v-once`
 

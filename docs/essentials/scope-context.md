@@ -6,6 +6,8 @@ pocket-vue uses a hierarchical scope system similar to JavaScript's lexical scop
 
 When you nest `v-scope` directives, a new child scope is created that inherits from the parent scope.
 
+<div v-pre>
+
 ```html
 <div v-scope="{ outer: 'hello' }">
   <p>Outer: {{ outer }}</p>
@@ -17,9 +19,13 @@ When you nest `v-scope` directives, a new child scope is created that inherits f
 </div>
 ```
 
+</div>
+
 ### Property Overriding
 
 If a child scope defines a property with the same name as a parent property, it will "shadow" the parent property.
+
+<div v-pre>
 
 ```html
 <div v-scope="{ name: 'Parent' }">
@@ -28,6 +34,8 @@ If a child scope defines a property with the same name as a parent property, it 
   </div>
 </div>
 ```
+
+</div>
 
 ### Updating Parent State
 
