@@ -1,3 +1,9 @@
+## [0.0.3](https://github.com/ws-rush/pico-vue/compare/v0.0.2...v0.0.3) (2026-02-22)
+
+### Features
+
+- automate JSR publishing with a new GitHub Actions workflow and enhance documentation with JSDoc comments. ([1b6e577](https://github.com/ws-rush/pico-vue/commit/1b6e577c8033e9d5dbbb4e78d7949c8d01b4c8f9))
+
 ## [0.0.2](https://github.com/ws-rush/pico-vue/compare/v0.0.1...v0.0.2) (2026-02-22)
 
 ## [0.0.1](https://github.com/ws-rush/pico-vue/compare/v1.2.0...v0.0.1) (2026-02-22)
