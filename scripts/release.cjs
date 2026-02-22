@@ -81,7 +81,7 @@ async function main() {
 
   // Publish the package.
   step('\nPublishing the package...')
-  await run('npx', ['jsr', 'publish'])
+  await run('npx', ['jsr', 'publish', '--allow-dirty'])
 
   // Push to GitHub.
   step('\nPushing to GitHub...')
