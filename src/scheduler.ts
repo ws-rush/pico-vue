@@ -9,8 +9,12 @@ export const queueJob = (job: Function) => {
   }
 }
 
-export const nextTick = (fn?: () => void) => {
-  return queueMicrotask(() => fn?.())
+/**
+ * Defers the execution of the provided function to the next DOM update cycle.
+ * @param fn - The function to execute.
+ */
+export const nextTick = (fn?: () => void): void => {
+  queueMicrotask(() => fn?.())
 }
 
 const flushJobs = () => {

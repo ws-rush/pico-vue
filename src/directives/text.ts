@@ -1,5 +1,5 @@
 import { isObject } from '@vue/shared'
-import { Directive } from '.'
+import { Directive } from './index'
 
 export const text: Directive<Text | Element> = ({ el, get, effect }) => {
   effect(() => {
@@ -8,14 +8,14 @@ export const text: Directive<Text | Element> = ({ el, get, effect }) => {
 }
 
 export const toDisplayString = (value: any) =>
-value != null
-? isObject(value)
-? (() => {
-try {
-return JSON.stringify(value, null, 2)
-} catch (e) {
-return '[Object]'
-}
-})()
-: String(value)
-: ''
+  value != null
+    ? isObject(value)
+      ? (() => {
+        try {
+          return JSON.stringify(value, null, 2)
+        } catch (e) {
+          return '[Object]'
+        }
+      })()
+      : String(value)
+    : ''

@@ -1,4 +1,4 @@
-import { Directive } from '.'
+import { Directive } from './index'
 
 export const html: Directive = ({ el, get, effect }) => {
   effect(() => {

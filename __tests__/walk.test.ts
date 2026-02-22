@@ -359,27 +359,19 @@ describe('walk', () => {
     expect(span?.textContent).toBe('Initial value')
   })
 
-  it('should handle ref directive inside v-scope', () => {
-    container.innerHTML = '<div v-scope ref="myRef">Content</div>'
-
-    walk(container, ctx)
-
-    // The ref should be registered in both parent and scoped contexts
-    const scopedDiv = container.querySelector('div[ref]')
-    expect(scopedDiv).toBeDefined()
-  })
-
   it('should register ref in both parent and scoped context when used with v-scope', () => {
-    container.innerHTML = '<div v-scope="{ data: 42 }" ref="scopedRef">Scoped Content</div>'
+    container.innerHTML = '<div v-scope="{ data: 42 }" ref="scopedRef"><span id="inner">{{ $refs.scopedRef.tagName }}</span></div>'
 
     ctx.scope.$refs = {}
     walk(container, ctx)
 
-    // The ref should be registered
-    expect(ctx.scope.$refs.scopedRef).toBeDefined()
+    // The ref should be registered in parent scope
     const div = container.querySelector('div')
-    expect(div).toBeDefined()
     expect(ctx.scope.$refs.scopedRef).toBe(div)
+    
+    // The ref should also be available in the scoped context (verified via interpolation)
+    const span = container.querySelector('#inner')
+    expect(span?.textContent).toBe('DIV')
   })
 
   it('should handle v-scope with empty expression', () => {
@@ -409,11 +401,13 @@ describe('walk', () => {
   it('should handle :ref shorthand', () => {
     container.innerHTML = '<div :ref="myRef"></div>'
 
+    ctx.scope.$refs = {}
     walk(container, ctx)
 
-    // :ref should be handled as ref directive
+    // :ref should be handled as ref directive and correctly register in the scope
     const div = container.querySelector('div')
     expect(div).toBeDefined()
+    expect(ctx.scope.$refs.myRef).toBe(div)
   })
 
   it('should process DocumentFragment nodes', () => {

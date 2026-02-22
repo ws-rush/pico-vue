@@ -85,12 +85,12 @@ describe("app", () => {
       const app = createApp({});
       app.mount(container);
       
-      expect(app.rootBlocks.length).toBe(1);
+      const block = app.rootBlocks[0];
+      const teardownSpy = vi.spyOn(block, "teardown");
       
       app.unmount();
       
-      // After unmount, the blocks should be cleaned up
-      expect(app.rootBlocks.length).toBe(1); // Blocks array still exists but are torn down
+      expect(teardownSpy).toHaveBeenCalled();
     });
 
     it("should handle nested v-scope elements", () => {
@@ -231,8 +231,10 @@ describe("app", () => {
 
       app.mount(container);
 
-      // Test that refs work by checking the template renders
-      expect(container.textContent).toBe("Test");
+      // Verify that $refs object is provided and the ref is correctly registered
+      expect(app.scope.$refs).toBeDefined();
+      expect(app.scope.$refs.testDiv).toBeDefined();
+      expect(app.scope.$refs.testDiv).toBe(container.querySelector('div'));
     });
   });
 });

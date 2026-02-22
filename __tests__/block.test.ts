@@ -149,7 +149,6 @@ describe("Block", () => {
     child.setAttribute("v-effect", "() => {}");
     const block = new Block(el, ctx);
     const childBlock = new Block(child, block.ctx);
-    walk(childBlock.template, childBlock.ctx);
 
     // Wait for nextTick to ensure the effect is created
     await nextTick();
@@ -162,9 +161,18 @@ describe("Block", () => {
 
     block.teardown();
 
-    // After teardown, effects should be stopped (but the array might still contain them)
-    // The important thing is that cleanups are called
+    // After teardown, cleanups should be called
     expect(cleanupSpy).toHaveBeenCalled();
+    
+    // Context arrays should be cleared
+    expect(block.ctx.blocks.length).toBe(0);
+    expect(block.ctx.effects.length).toBe(0);
+    expect(block.ctx.cleanups.length).toBe(0);
+    
+    // Child block context arrays should also be cleared (via recursive teardown)
+    expect(childBlock.ctx.blocks.length).toBe(0);
+    expect(childBlock.ctx.effects.length).toBe(0);
+    expect(childBlock.ctx.cleanups.length).toBe(0);
   });
 
   it("should handle fragment insertion with existing start/end markers", () => {
