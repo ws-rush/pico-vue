@@ -79,9 +79,9 @@ async function main() {
   await run('git', ['commit', '-m', `release: v${targetVersion}`])
   await run('git', ['tag', `v${targetVersion}`])
 
-  // Publish the package.
-  step('\nPublishing the package...')
-  await run('npx', ['jsr', 'publish', '--allow-dirty'])
+  // Publish the package to JSR is now handled by GitHub Actions for provenance.
+  // step('\nPublishing the package...')
+  // await run('npx', ['jsr', 'publish', '--allow-dirty'])
 
   // Push to GitHub.
   step('\nPushing to GitHub...')

@@ -1,6 +1,7 @@
 {
   "name": "@rush/pico-vue",
   "version": "0.0.2",
+  "description": "petite-vue fork with plugins support",
   "license": "MIT",
   "exports": "./src/index.ts",
   "imports": {

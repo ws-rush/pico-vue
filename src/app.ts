@@ -8,15 +8,29 @@ import { nextTick } from './scheduler'
 const escapeRegex = (str: string) =>
   str.replace(/[-.*+?^${}()|[\]\/\\]/g, '\\$&')
 
+/**
+ * The main application interface for pico-vue.
+ */
 export interface App {
+  /** Registers a directive. */
   directive(name: string, def?: Directive): Directive | undefined | App
+  /** Installs a plugin. */
   use(plugin: any, options?: any): App
+  /** Mounts the application to the DOM. */
   mount(el?: string | Element | null): App | undefined
+  /** Unmounts the application. */
   unmount(): void
+  /** The root blocks of the mounted application. */
   readonly rootBlocks: Block[]
+  /** The root scope/context of the application. */
   readonly scope: any
 }
 
+/**
+ * Creates a new pico-vue application instance.
+ * @param initialData - Optional initial state/data for the application.
+ * @returns A new App instance.
+ */
 export const createApp = (initialData?: any): App => {
   // root context
   const ctx = createContext()
