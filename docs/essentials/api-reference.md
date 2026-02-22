@@ -1,6 +1,6 @@
 # API Reference
 
-This page provides a comprehensive reference of the pocket-vue core API.
+This page provides a comprehensive reference of the pico-vue core API.
 
 ## `createApp()`
 
@@ -66,7 +66,7 @@ Runs a function and tracks its reactive dependencies.
 
 ### `v-scope`
 
-Marks an element as a pocket-vue component and defines its scope.
+Marks an element as a pico-vue component and defines its scope.
 
 ```html
 <div v-scope="{ count: 0 }"></div>

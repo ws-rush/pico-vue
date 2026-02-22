@@ -1,6 +1,6 @@
 # Accordion Component
 
-This example shows how to build a collapsible accordion component using pocket-vue.
+This example shows how to build a collapsible accordion component using pico-vue.
 
 ## Example Code
 

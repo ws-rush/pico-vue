@@ -1,6 +1,6 @@
 # Tooltip Component
 
-This example shows how to build a simple tooltip component using pocket-vue.
+This example shows how to build a simple tooltip component using pico-vue.
 
 ## Example Code
 

@@ -77,7 +77,7 @@ export const createApp = (initialData?: any) => {
         roots[0] === document.documentElement
       ) {
         console.warn(
-          `Mounting on documentElement - this is non-optimal as pocket-vue will be forced to crawl the entire page's DOM. Consider explicitly marking elements controlled by pocket-vue with \`v-scope\`.`
+          `Mounting on documentElement - this is non-optimal as pico-vue will be forced to crawl the entire page's DOM. Consider explicitly marking elements controlled by pico-vue with \`v-scope\`.`
         )
       }
 

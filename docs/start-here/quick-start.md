@@ -1,10 +1,10 @@
 # Quick Start
 
-pocket-vue is a lightweight, progressive-first JavaScript framework that enables developers to add client-side interactivity to server-rendered applications without the overhead of a full Single Page Application (SPA) framework.
+pico-vue is a lightweight, progressive-first JavaScript framework that enables developers to add client-side interactivity to server-rendered applications without the overhead of a full Single Page Application (SPA) framework.
 
-## What is pocket-vue?
+## What is pico-vue?
 
-pocket-vue is a fork of [petite-vue](https://github.com/vuejs/petite-vue), optimized for **Progressive Enhancement**. It provides the same template syntax and reactivity mental model as standard Vue, but is specifically optimized for "sprinkling" small amounts of interactions on existing HTML pages.
+pico-vue is a fork of [petite-vue](https://github.com/vuejs/petite-vue), optimized for **Progressive Enhancement**. It provides the same template syntax and reactivity mental model as standard Vue, but is specifically optimized for "sprinkling" small amounts of interactions on existing HTML pages.
 
 ### Key Benefits
 
@@ -17,7 +17,7 @@ pocket-vue is a fork of [petite-vue](https://github.com/vuejs/petite-vue), optim
 
 ## Comparison with full Vue
 
-| Feature | pocket-vue | Standard Vue |
+| Feature | pico-vue | Standard Vue |
 |---------|-----------|--------------|
 | Target Use Case | Progressive Enhancement | Single Page Application (SPA) |
 | Runtime Size | ~6kb | ~100kb+ |
@@ -31,7 +31,7 @@ pocket-vue is a fork of [petite-vue](https://github.com/vuejs/petite-vue), optim
 ## Basic Example
 
 ```html
-<script src="https://unpkg.com/pocket-vue" defer init></script>
+<script src="https://unpkg.com/pico-vue" defer init></script>
 
 <div v-scope="{ count: 0 }">
   <button @click="count--">-</button>
@@ -58,7 +58,7 @@ Here is a common pattern: toggling visibility of an element.
 
 ## How it works
 
-1. **Load the script**: The `<script>` tag loads pocket-vue from a CDN. The `defer` attribute ensures it runs after the HTML is parsed. The `init` attribute tells it to automatically find and mount components.
+1. **Load the script**: The `<script>` tag loads pico-vue from a CDN. The `defer` attribute ensures it runs after the HTML is parsed. The `init` attribute tells it to automatically find and mount components.
 
 2. **Define Scope**: `v-scope="{ count: 0 }"` marks the `<div>` as a component and initializes its state with `count` set to 0. This state is **reactive** — if it changes, the UI updates automatically.
 

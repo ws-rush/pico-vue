@@ -1,6 +1,6 @@
 # Lifecycle Events
 
-pocket-vue provides special lifecycle events that you can listen to on any element.
+pico-vue provides special lifecycle events that you can listen to on any element.
 
 ## Available Events
 

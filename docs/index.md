@@ -2,8 +2,8 @@
 layout: home
 
 hero:
-  name: "Pocket Vue"
-  image: { src: '/logo.png', alt: 'pocket-vue logo' }
+  name: "Pico Vue"
+  image: { src: '/logo.png', alt: 'pico-vue logo' }
   text: "Progressive Enhancement for the Modern Web"
   tagline: A lightweight, Vue-compatible library optimized for "sprinkling" interactions on server-rendered pages (Django, Laravel, Rails, and more).
   actions:
@@ -12,7 +12,7 @@ hero:
       link: /start-here/installation
     - theme: alt
       text: View on GitHub
-      link: https://github.com/ws-rush/pocket-vue
+      link: https://github.com/ws-rush/pico-vue
 
 features:
   - title: Ultra Lightweight
@@ -27,13 +27,13 @@ features:
 
 <div style="text-align: center; margin-top: 40px;">
 
-## Why pocket-vue?
+## Why pico-vue?
 
-pocket-vue is a fork of petite-vue, providing a modern, maintained solution for developers who want the power of Vue's reactivity without the overhead of a full Single Page Application (SPA).
+pico-vue is a fork of petite-vue, providing a modern, maintained solution for developers who want the power of Vue's reactivity without the overhead of a full Single Page Application (SPA).
 
 ```html
 <!-- No build step required! -->
-<script src="https://unpkg.com/pocket-vue" defer init></script>
+<script src="https://unpkg.com/pico-vue" defer init></script>
 
 <div v-scope="{ count: 0 }">
   {{ count }}

@@ -1,15 +1,15 @@
 # ASP.NET Core Integration Guide
 
-Pocket-vue is an excellent choice for ASP.NET developers who want a lightweight way to add interactivity to their Razor views or pages without using a full-blown SPA.
+Pico-vue is an excellent choice for ASP.NET developers who want a lightweight way to add interactivity to their Razor views or pages without using a full-blown SPA.
 
 ## Installation
 
-Add pocket-vue to your `_Layout.cshtml` file.
+Add pico-vue to your `_Layout.cshtml` file.
 
 ```html
 <!-- Views/Shared/_Layout.cshtml -->
 <head>
-  <script src="https://unpkg.com/pocket-vue" defer init></script>
+  <script src="https://unpkg.com/pico-vue" defer init></script>
 </head>
 ```
 
@@ -58,7 +58,7 @@ Add a meta tag with the antiforgery token to your `_Layout.cshtml`:
 <meta name="X-XSRF-TOKEN" content="@Html.AntiForgeryToken()">
 ```
 
-Then access it in your pocket-vue methods:
+Then access it in your pico-vue methods:
 
 ```javascript
 function saveData() {
@@ -117,7 +117,7 @@ Easily manage dynamic form sections where users can add or remove items.
 
 ## Handling Razor Conflicts
 
-Razor uses the `@` symbol, which pocket-vue also uses for its event shorthand (`@click`).
+Razor uses the `@` symbol, which pico-vue also uses for its event shorthand (`@click`).
 
 ### Escaping `@`
 You can escape the `@` symbol in your Razor views by using `@@`.
@@ -128,7 +128,7 @@ You can escape the `@` symbol in your Razor views by using `@@`.
 
 ---
 
-## Changing pocket-vue Delimiters
+## Changing pico-vue Delimiters
 
 If you'd like to use different delimiters to avoid confusion with Razor:
 

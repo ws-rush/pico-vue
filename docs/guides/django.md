@@ -1,15 +1,15 @@
 # Django Integration Guide
 
-Pocket-vue is an excellent companion for Django applications. It allows you to add interactivity to your templates while keeping your backend logic in Python.
+pico-vue is an excellent companion for Django applications. It allows you to add interactivity to your templates while keeping your backend logic in Python.
 
 ## Installation
 
-The easiest way to use pocket-vue in Django is by adding a `<script>` tag to your base template.
+The easiest way to use pico-vue in Django is by adding a `<script>` tag to your base template.
 
 ```html
 <!-- base.html -->
 <head>
-  <script src="https://unpkg.com/pocket-vue" defer init></script>
+  <script src="https://unpkg.com/pico-vue" defer init></script>
 </head>
 ```
 
@@ -60,7 +60,7 @@ Add the token to a meta tag in your `base.html`:
 <meta name="csrf-token" content="{{ csrf_token }}">
 ```
 
-Then access it in your pocket-vue methods:
+Then access it in your pico-vue methods:
 
 ```javascript
 function submitForm() {
@@ -127,19 +127,19 @@ Update a second dropdown based on the selection of the first.
 
 ## Handling Template Conflicts
 
-Since both Django and pocket-vue use `{{ }}` for interpolation, you have two options:
+Since both Django and pico-vue use `{{ }}` for interpolation, you have two options:
 
 ### 1. Escape the braces
-Wrap the pocket-vue content in `{% verbatim %}` tags.
+Wrap the pico-vue content in `{% verbatim %}` tags.
 
 ```html
 {% verbatim %}
-  <div>{{ pocket_vue_variable }}</div>
+  <div>{{ pico_vue_variable }}</div>
 {% endverbatim %}
 ```
 
-### 2. Change pocket-vue delimiters
-Configure pocket-vue to use different delimiters.
+### 2. Change pico-vue delimiters
+Configure pico-vue to use different delimiters.
 
 ```javascript
 createApp({
@@ -149,5 +149,5 @@ createApp({
 
 Template:
 ```html
-<div>[[ pocket_vue_variable ]]</div>
+<div>[[ pico_vue_variable ]]</div>
 ```

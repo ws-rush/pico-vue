@@ -1,22 +1,22 @@
 # Reactivity APIs
 
-pocket-vue uses the same core reactivity system as standard Vue. This includes `ref()`, `reactive()`, `computed()`, and `watchEffect()`.
+pico-vue uses the same core reactivity system as standard Vue. This includes `ref()`, `reactive()`, `computed()`, and `watchEffect()`.
 
 ## Usage
 
-When using the CDN build, these APIs are available on the global `PocketVue` object.
+When using the CDN build, these APIs are available on the global `PicoVue` object.
 
 ```html
-<script src="https://unpkg.com/pocket-vue"></script>
+<script src="https://unpkg.com/pico-vue"></script>
 <script>
-  const { reactive, ref, computed, watchEffect } = PocketVue
+  const { reactive, ref, computed, watchEffect } = PicoVue
 </script>
 ```
 
-When using the ES module build, you can import them from `pocket-vue`.
+When using the ES module build, you can import them from `pico-vue`.
 
 ```javascript
-import { reactive, ref, computed, watchEffect } from 'pocket-vue'
+import { reactive, ref, computed, watchEffect } from 'pico-vue'
 ```
 
 ---
@@ -68,4 +68,4 @@ count.value++ // prints 1
 - **Use `reactive` for state objects**: This is the most common pattern for defining your application state.
 - **Use `ref` for primitive values**: Use `ref` for single values like strings, numbers, or booleans.
 - **Always access `.value` on refs**: Remember that refs are objects and you must use the `.value` property to access or modify their content in JavaScript code.
-- **No `.value` needed in templates**: pocket-vue automatically unwraps refs in your templates, so you can just use <code v-pre>{{ count }}</code> instead of <code v-pre>{{ count.value }}</code>.
+- **No `.value` needed in templates**: pico-vue automatically unwraps refs in your templates, so you can just use <code v-pre>{{ count }}</code> instead of <code v-pre>{{ count.value }}</code>.

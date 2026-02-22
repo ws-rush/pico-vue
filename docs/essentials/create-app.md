@@ -1,13 +1,13 @@
 # createApp() API
 
-`createApp()` is the main entry point for creating a pocket-vue application instance.
+`createApp()` is the main entry point for creating a pico-vue application instance.
 
 ## Usage
 
 ### Simple Initialization
 
 ```javascript
-import { createApp } from 'pocket-vue'
+import { createApp } from 'pico-vue'
 
 const app = createApp({
   count: 0,
@@ -21,12 +21,12 @@ app.mount('#app')
 
 ### Script Tag Inclusion
 
-When using the CDN build, `createApp` is available on the global `PocketVue` object.
+When using the CDN build, `createApp` is available on the global `PicoVue` object.
 
 ```html
-<script src="https://unpkg.com/pocket-vue"></script>
+<script src="https://unpkg.com/pico-vue"></script>
 <script>
-  const { createApp } = PocketVue
+  const { createApp } = PicoVue
   createApp({ count: 0 }).mount('#app')
 </script>
 ```
@@ -51,7 +51,7 @@ Creates a new application instance.
 
 Mounts the application to the DOM.
 
-- **`el`**: An optional selector string or an `Element`. If not provided, pocket-vue will search for and mount to all elements with the `v-scope` directive. If no `v-scope` is found, it will mount to the entire `document.documentElement` (not recommended for performance).
+- **`el`**: An optional selector string or an `Element`. If not provided, pico-vue will search for and mount to all elements with the `v-scope` directive. If no `v-scope` is found, it will mount to the entire `document.documentElement` (not recommended for performance).
 
 ### `app.unmount()`
 

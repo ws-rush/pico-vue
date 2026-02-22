@@ -1,15 +1,15 @@
 # Laravel Integration Guide
 
-Pocket-vue is an excellent alternative or companion to Livewire or Alpine.js in Laravel applications. It provides the same reactive benefits without the server-side overhead of Livewire.
+Pico-vue is an excellent alternative or companion to Livewire or Alpine.js in Laravel applications. It provides the same reactive benefits without the server-side overhead of Livewire.
 
 ## Installation
 
-Add pocket-vue to your `app.blade.php` layout.
+Add pico-vue to your `app.blade.php` layout.
 
 ```html
 <!-- resources/views/layouts/app.blade.php -->
 <head>
-  <script src="https://unpkg.com/pocket-vue" defer init></script>
+  <script src="https://unpkg.com/pico-vue" defer init></script>
 </head>
 ```
 
@@ -31,13 +31,13 @@ Laravel provides the `Js::from()` directive to safely serialize data into your B
 ```
 
 > [!TIP]
-> Use the `@` prefix to escape Blade's mustache syntax (`@{{ }}`) so that pocket-vue can process it on the client.
+> Use the `@` prefix to escape Blade's mustache syntax (`@{{ }}`) so that pico-vue can process it on the client.
 
 ---
 
 ## CSRF Token Handling
 
-Laravel automatically includes a CSRF token. Pocket-vue can read this for all AJAX requests.
+Laravel automatically includes a CSRF token. Pico-vue can read this for all AJAX requests.
 
 ### Option 1: Meta Tag Extraction
 
@@ -94,9 +94,9 @@ createApp({
 
 ## Comparison with Alpine.js
 
-Laravel developers often use Alpine.js. Here is how pocket-vue compares:
+Laravel developers often use Alpine.js. Here is how pico-vue compares:
 
-| Feature | pocket-vue | Alpine.js |
+| Feature | pico-vue | Alpine.js |
 |---------|-----------|-----------|
 | **Syntax** | Vue-compatible (`v-if`, `v-for`) | Custom (`x-if`, `x-for`) |
 | **Reactivity** | Full Vue reactivity | Internal reactive engine |
@@ -107,7 +107,7 @@ Laravel developers often use Alpine.js. Here is how pocket-vue compares:
 
 ## Blade Conflicts
 
-If you find yourself constantly escaping mustaches with `@{{ }}`, you can change pocket-vue's delimiters.
+If you find yourself constantly escaping mustaches with `@{{ }}`, you can change pico-vue's delimiters.
 
 ```javascript
 createApp({

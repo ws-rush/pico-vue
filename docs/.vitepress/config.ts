@@ -13,7 +13,7 @@ export default withMermaid(
                 },
             },
         },
-        title: "Pocket Vue",
+        title: "Pico Vue",
         description: "A lightweight Vue-compatible library for progressive enhancement",
         base: '/',
 
@@ -23,7 +23,7 @@ export default withMermaid(
                 { text: 'Guide', link: '/start-here/installation' },
                 { text: 'API', link: '/directives/v-bind' },
                 { text: 'Examples', link: '/examples/' },
-                { text: 'GitHub', link: 'https://github.com/ws-rush/pocket-vue' }
+                { text: 'GitHub', link: 'https://github.com/ws-rush/pico-vue' }
             ],
 
             search: {
@@ -103,7 +103,7 @@ export default withMermaid(
             ],
 
             socialLinks: [
-                { icon: 'github', link: 'https://github.com/ws-rush/pocket-vue' }
+                { icon: 'github', link: 'https://github.com/ws-rush/pico-vue' }
             ],
 
             footer: {

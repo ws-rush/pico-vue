@@ -10,13 +10,13 @@ export default defineConfig({
     minify: 'esbuild',
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
-      name: 'PocketVue',
+      name: 'PicoVue',
       formats: ['es', 'umd', 'iife'],
       fileName: (format) => {
-        if (format === 'es') return 'pocket-vue.es.js'
-        if (format === 'umd') return 'pocket-vue.umd.js'
-        if (format === 'iife') return 'pocket-vue.iife.js'
-        return `pocket-vue.${format}.js`
+        if (format === 'es') return 'pico-vue.es.js'
+        if (format === 'umd') return 'pico-vue.umd.js'
+        if (format === 'iife') return 'pico-vue.iife.js'
+        return `pico-vue.${format}.js`
       }
     },
     rollupOptions: {

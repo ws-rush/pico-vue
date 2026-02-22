@@ -1,6 +1,6 @@
 # Scope and Context
 
-pocket-vue uses a hierarchical scope system similar to JavaScript's lexical scoping. This allows components to inherit and share data efficiently.
+pico-vue uses a hierarchical scope system similar to JavaScript's lexical scoping. This allows components to inherit and share data efficiently.
 
 ## Scope Inheritance
 
@@ -39,13 +39,13 @@ If a child scope defines a property with the same name as a parent property, it 
 
 ### Updating Parent State
 
-When you assign a value to a property in a template, pocket-vue will first check if the property exists on the current scope. If it doesn't, it will walk up the scope chain and update the property on the first parent scope where it finds it.
+When you assign a value to a property in a template, pico-vue will first check if the property exists on the current scope. If it doesn't, it will walk up the scope chain and update the property on the first parent scope where it finds it.
 
 ---
 
 ## Provide and Inject
 
-pocket-vue provides a simple `provide` and `inject` pattern for sharing data across multiple levels of nested components without manually passing props.
+pico-vue provides a simple `provide` and `inject` pattern for sharing data across multiple levels of nested components without manually passing props.
 
 ### `provide(key, value)`
 
@@ -60,7 +60,7 @@ createApp({
 
 ### `inject(key)`
 
-In pocket-vue, `inject` is handled automatically through scope inheritance. Any property defined in a parent scope is implicitly "injected" into all child scopes.
+In pico-vue, `inject` is handled automatically through scope inheritance. Any property defined in a parent scope is implicitly "injected" into all child scopes.
 
 ---
 

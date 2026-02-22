@@ -94,7 +94,7 @@ Use a `<template>` tag if you need to repeat a block of multiple elements.
 
 ## Importance of `:key`
 
-It is highly recommended to provide a unique `key` attribute for each item using `:key`. This allows pocket-vue to efficiently track and reuse elements when the list changes.
+It is highly recommended to provide a unique `key` attribute for each item using `:key`. This allows pico-vue to efficiently track and reuse elements when the list changes.
 
 ```html
 <div v-for="item in items" :key="item.id">
@@ -102,11 +102,11 @@ It is highly recommended to provide a unique `key` attribute for each item using
 </div>
 ```
 
-Without a unique key, pocket-vue will use a "patch in-place" strategy which can lead to unexpected behavior with stateful elements (like input fields) or CSS transitions.
+Without a unique key, pico-vue will use a "patch in-place" strategy which can lead to unexpected behavior with stateful elements (like input fields) or CSS transitions.
 
 ---
 
 ## Limitations
 
-- **Deep Destructuring**: pocket-vue supports basic destructuring (e.g., `v-for="[id, name] in items"`) but does not support complex nested destructuring.
-- **`v-for` with `v-if`**: Unlike standard Vue, `v-for` takes precedence over `v-if` in pocket-vue when used on the same element. It's generally better to use a wrapper or filter the list in your scope.
+- **Deep Destructuring**: pico-vue supports basic destructuring (e.g., `v-for="[id, name] in items"`) but does not support complex nested destructuring.
+- **`v-for` with `v-if`**: Unlike standard Vue, `v-for` takes precedence over `v-if` in pico-vue when used on the same element. It's generally better to use a wrapper or filter the list in your scope.

@@ -1,6 +1,6 @@
 # Directive Reference
 
-This page provides a quick reference for all built-in directives available in pocket-vue.
+This page provides a quick reference for all built-in directives available in pico-vue.
 
 | Directive | Syntax | Description |
 |-----------|--------|-------------|

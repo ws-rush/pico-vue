@@ -1,6 +1,6 @@
 # Fetch API Integration
 
-This recipe shows how to use pocket-vue to fetch and display data from an external API using the native Fetch API.
+This recipe shows how to use pico-vue to fetch and display data from an external API using the native Fetch API.
 
 ## Example Code
 
@@ -59,4 +59,4 @@ This recipe shows how to use pocket-vue to fetch and display data from an extern
 4.  **Lifecycle Hook**: We call `fetchPosts()` in the `mounted()` hook to load the data as soon as the component is mounted.
 5.  **Conditional Rendering**: We use `v-if`, `v-else-if`, and `v-show` to display the data, loading indicator, and error messages.
 6.  **Refresh Mechanism**: We provide a "Refresh Posts" button to manually trigger the API call.
-7.  **Optimized Rendering**: By using `:key="post.id"`, we ensure that pocket-vue efficiently updates the DOM when the data changes.
+7.  **Optimized Rendering**: By using `:key="post.id"`, we ensure that pico-vue efficiently updates the DOM when the data changes.
