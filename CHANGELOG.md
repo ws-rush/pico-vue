@@ -1,3 +1,10 @@
+## [0.0.1](https://github.com/ws-rush/pico-vue/compare/v1.2.0...v0.0.1) (2026-02-22)
+
+### Features
+
+- Introduce JSR publishing support, define the `App` interface, and refine internal types and directive imports. ([42a00c6](https://github.com/ws-rush/pico-vue/commit/42a00c6a0c175856eab914e67df31ff322348475))
+- Set up VitePress documentation, including new content pages and build output. ([2f96aa2](https://github.com/ws-rush/pico-vue/commit/2f96aa2b080f2a0077f0f16500a03cc8f2c7d95f))
+
 # [1.2.0](https://github.com/ws-rush/pico-vue/compare/v1.1.2...v1.2.0) (2025-11-20)
 
 ### Bug Fixes
