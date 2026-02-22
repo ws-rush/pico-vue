@@ -1,4 +1,4 @@
-import { Directive } from "."
+import { Directive } from "./index"
 import {
   normalizeClass,
   normalizeStyle,

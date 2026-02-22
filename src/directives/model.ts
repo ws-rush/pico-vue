@@ -1,5 +1,5 @@
 import { isArray, looseEqual, looseIndexOf, toNumber } from '@vue/shared'
-import { Directive } from '.'
+import { Directive } from './index'
 import { listen } from '../utils'
 
 // Consolidated value handling utilities

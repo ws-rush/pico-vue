@@ -1,4 +1,4 @@
-import { Directive } from '.'
+import { Directive } from './index'
 import { execute } from '../eval'
 import { nextTick } from '../scheduler'
 

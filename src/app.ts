@@ -8,7 +8,16 @@ import { nextTick } from './scheduler'
 const escapeRegex = (str: string) =>
   str.replace(/[-.*+?^${}()|[\]\/\\]/g, '\\$&')
 
-export const createApp = (initialData?: any) => {
+export interface App {
+  directive(name: string, def?: Directive): Directive | undefined | App
+  use(plugin: any, options?: any): App
+  mount(el?: string | Element | null): App | undefined
+  unmount(): void
+  readonly rootBlocks: Block[]
+  readonly scope: any
+}
+
+export const createApp = (initialData?: any): App => {
   // root context
   const ctx = createContext()
   if (initialData) {

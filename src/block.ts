@@ -13,7 +13,7 @@ export class Block {
   start?: Text
   end?: Text
 
-  get el() {
+  get el(): Element | Text {
     return this.start ?? (this.template as Element)
   }
 

@@ -9,8 +9,8 @@ export const queueJob = (job: Function) => {
   }
 }
 
-export const nextTick = (fn?: () => void) => {
-  return queueMicrotask(() => fn?.())
+export const nextTick = (fn?: () => void): void => {
+  queueMicrotask(() => fn?.())
 }
 
 const flushJobs = () => {

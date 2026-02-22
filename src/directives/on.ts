@@ -1,4 +1,4 @@
-import { Directive } from '.'
+import { Directive } from './index'
 import { hyphenate } from '@vue/shared'
 import { listen } from '../utils'
 import { nextTick } from '../scheduler'
@@ -44,7 +44,7 @@ export const on: Directive = ({ el, get, exp, arg, modifiers }) => {
   // special lifecycle events
   if (import.meta.env.DEV && (arg === 'mounted' || arg === 'unmounted')) {
     console.error(
-    `mounted and unmounted hooks now need to be prefixed with vue: - use @vue:${arg}="handler" instead.`
+      `mounted and unmounted hooks now need to be prefixed with vue: - use @vue:${arg}="handler" instead.`
     )
   }
   if (arg === 'vue:mounted') {
