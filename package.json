@@ -1,6 +1,6 @@
 {
   "name": "pico-vue",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "petite-vue fork with plugins support",
   "type": "module",
   "main": "dist/pico-vue.umd.js",
