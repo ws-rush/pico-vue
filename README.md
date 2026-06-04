@@ -1,53 +1,81 @@
 # pocket-vue
 
-[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/ws-rush/pocket-vue)
+[![npm version](https://img.shields.io/npm/v/pocket-vue.svg)](https://www.npmjs.com/package/pocket-vue)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-`pocket-vue` is a fork of `petite-vue`, which is an alternative distribution of [Vue](https://vuejs.org) optimized for [progressive enhancement](https://developer.mozilla.org/en-US/docs/Glossary/Progressive_Enhancement). It provides the same template syntax and reactivity mental model as standard Vue. However, it is specifically optimized for "sprinkling" a small amount of interactions on an existing HTML page rendered by a server framework.
+A maintained fork of [petite-vue](https://github.com/vuejs/petite-vue) — an ultra-lightweight distribution of [Vue](https://vuejs.org) optimized for progressive enhancement. It provides the same template syntax and reactivity mental model as standard Vue, without the overhead of a full SPA.
 
-## Status
+> **Note:** petite-vue is no longer maintained. pocket-vue picks up where it left off with bug fixes and feature requests.
 
-- `petite-vue` is not maintained anymore, hence we will provide bug fixes and handle feature requests. Feel free to open an issue or PR.
+## Why pocket-vue?
+
+- **~9kb gzipped** — drop it in, no build step required
+- **Vue-compatible** — same template syntax and reactivity you already know
+- **Progressive enhancement first** — layer interactivity onto existing server-rendered pages
+- **Framework friendly** — works with Django, Rails, Laravel, ASP.NET, or any server-side setup
+
+## Quick Start
+
+```html
+<script src="https://unpkg.com/pocket-vue" defer init></script>
+
+<div v-scope="{ count: 0 }">
+  {{ count }}
+  <button @click="count++">Increment</button>
+</div>
+```
+
+### CDN
+
+```html
+<script src="https://unpkg.com/pocket-vue"></script>
+<!-- or -->
+<script src="https://cdn.jsdelivr.net/npm/pocket-vue"></script>
+```
+
+### npm
+
+```bash
+npm install pocket-vue
+```
+
+```js
+import { createApp } from 'pocket-vue'
+```
+
+## Installation
+
+For detailed setup instructions, bundle options, and usage with various frameworks, see the [full documentation](https://pocket-vue.pages.dev/start-here/installation).
+
+## Features
+
+| Directive      | Description                        |
+| -------------- | ---------------------------------- |
+| `v-scope`      | Declare reactive state             |
+| `v-model`      | Two-way data binding               |
+| `v-if` / `v-else` | Conditional rendering           |
+| `v-for`        | List rendering                     |
+| `v-on` / `@`   | Event handling                     |
+| `v-bind` / `:` | Attribute binding                  |
+| `v-text`       | Text content binding               |
+| `v-html`       | Inner HTML binding                 |
+| `v-show`       | Toggle visibility                  |
+| `v-effect`     | Reactive side effects              |
 
 ## Documentation
 
-For usage instructions, examples, and API reference, please visit our [documentation](docs/).
+Full documentation, guides, and API reference are available at [pocket-vue.pages.dev](https://pocket-vue.pages.dev).
 
-To run the documentation locally:
+To run the docs locally:
 
 ```bash
 pnpm docs:dev
 ```
 
-## Development
-
-### Setup
-
-```bash
-pnpm install
-```
-
-### Dev Server
-
-```bash
-pnpm dev
-```
-
-### Testing
-
-```bash
-pnpm test
-```
-
-### Build
-
-```bash
-pnpm build
-```
-
 ## Contributing
 
-We welcome contributions! Please feel free to submit a Pull Request.
+Contributions are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ## License
 
-MIT
+[MIT](LICENSE)
