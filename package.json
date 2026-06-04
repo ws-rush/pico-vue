@@ -47,7 +47,7 @@
   "bugs": {
     "url": "https://github.com/ws-rush/pocket-vue/discussions"
   },
-  "homepage": "https://pocket-vue.pages.dev",
+  "homepage": "https://pocket-vue.wusaby.com",
   "devDependencies": {
     "@mermaid-js/mermaid-mindmap": "^9.3.0",
     "@types/node": "^24.5.2",

@@ -45,7 +45,7 @@ import { createApp } from 'pocket-vue'
 
 ## Installation
 
-For detailed setup instructions, bundle options, and usage with various frameworks, see the [full documentation](https://pocket-vue.pages.dev/start-here/installation).
+For detailed setup instructions, bundle options, and usage with various frameworks, see the [full documentation](https://pocket-vue.wusaby.com/start-here/installation).
 
 ## Features
 
@@ -64,7 +64,7 @@ For detailed setup instructions, bundle options, and usage with various framewor
 
 ## Documentation
 
-Full documentation, guides, and API reference are available at [pocket-vue.pages.dev](https://pocket-vue.pages.dev).
+Full documentation, guides, and API reference are available at [pocket-vue.wusaby.com](https://pocket-vue.wusaby.com).
 
 To run the docs locally:
 
