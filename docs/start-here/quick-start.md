@@ -69,5 +69,5 @@ Here is a common pattern: toggling visibility of an element.
 ## Next Steps
 
 - Learn more about [v-scope](/essentials/v-scope)
-- Explore [Directives](/directives/v-bind)
+- Explore [Directives](/directives/)
 - Try the [Playground](/playground/)

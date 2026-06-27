@@ -29,7 +29,8 @@ export default withMermaid(
             logo: '/logo.jpg',
             nav: [
                 { text: 'Guide', link: '/start-here/installation' },
-                { text: 'API', link: '/directives/v-bind' },
+                { text: 'API', link: '/essentials/api-reference' },
+                { text: 'Directives', link: '/directives/' },
                 { text: 'Playground', link: '/playground/', target: '_blank' },
                 { text: 'GitHub', link: 'https://github.com/ws-rush/pocket-vue' }
             ],
@@ -54,25 +55,15 @@ export default withMermaid(
                         { text: 'Reactivity', link: '/essentials/reactivity' },
                         { text: 'Root Scope', link: '/essentials/root-scope' },
                         { text: 'Scope and Context', link: '/essentials/scope-context' },
-                        { text: 'Components', link: '/essentials/components' },
-                        { text: 'Lifecycle', link: '/essentials/lifecycle' },
+                        { text: 'Vue Compatibility', link: '/essentials/vue-compatibility' },
                         { text: 'API Reference', link: '/essentials/api-reference' }
                     ]
                 },
                 {
-                    text: 'Guides',
-                    items: [
-                        { text: 'State Management', link: '/guides/state-management' },
-                        { text: 'Server Integration', link: '/guides/server-integration' },
-                        { text: 'Django', link: '/guides/django' },
-                        { text: 'Rails', link: '/guides/rails' },
-                        { text: 'Laravel', link: '/guides/laravel' },
-                        { text: 'ASP.NET Core', link: '/guides/aspnet' },
-                        { text: 'Form Handling', link: '/guides/form-handling' }
-                    ]
-                }, {
                     text: 'Directives',
                     items: [
+                        { text: 'Overview', link: '/directives/' },
+                        { text: 'v-scope', link: '/essentials/v-scope' },
                         { text: 'v-bind', link: '/directives/v-bind' },
                         { text: 'v-model', link: '/directives/v-model' },
                         { text: 'v-if', link: '/directives/v-if' },
@@ -89,12 +80,31 @@ export default withMermaid(
                     ]
                 },
                 {
+                    text: 'Components & Lifecycle',
+                    items: [
+                        { text: 'Components', link: '/essentials/components' },
+                        { text: 'Lifecycle', link: '/essentials/lifecycle' }
+                    ]
+                },
+                {
                     text: 'Globals',
                     items: [
                         { text: '$el', link: '/globals/el' },
                         { text: '$root', link: '/globals/root' },
                         { text: '$refs', link: '/globals/refs' },
                         { text: '$nextTick', link: '/globals/nextTick' }
+                    ]
+                },
+                {
+                    text: 'Guides',
+                    items: [
+                        { text: 'State Management', link: '/guides/state-management' },
+                        { text: 'Server Integration', link: '/guides/server-integration' },
+                        { text: 'Django', link: '/guides/django' },
+                        { text: 'Rails', link: '/guides/rails' },
+                        { text: 'Laravel', link: '/guides/laravel' },
+                        { text: 'ASP.NET Core', link: '/guides/aspnet' },
+                        { text: 'Form Handling', link: '/guides/form-handling' }
                     ]
                 },
                 {

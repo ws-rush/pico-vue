@@ -47,15 +47,15 @@ Creates a new application instance.
 
 ## Instance Methods
 
-### `app.mount(el?: string | Element)`
+### `app.mount(el?: string | Element | null)`
 
-Mounts the application to the DOM.
+Mounts the application to the DOM and returns the app instance. If a selector string does not match any element, it logs a development warning and returns `undefined`.
 
-- **`el`**: An optional selector string or an `Element`. If not provided, pocket-vue will search for and mount to all elements with the `v-scope` directive. If no `v-scope` is found, it will mount to the entire `document.documentElement` (not recommended for performance).
+- **`el`**: An optional selector string, `Element`, or `null`. If not provided, pocket-vue will search for and mount to all elements with the `v-scope` directive. If no `v-scope` is found, it will mount to the entire `document.documentElement` (not recommended for performance).
 
 ### `app.unmount()`
 
-Unmounts the application and cleans up all reactive effects and event listeners.
+Unmounts the application and cleans up reactive effects and directive cleanup callbacks. Native DOM event listeners registered by `v-on` are attached to their elements and are not explicitly removed unless the element is removed or a custom directive returns its own cleanup callback.
 
 ### `app.directive(name: string, def?: Directive)`
 

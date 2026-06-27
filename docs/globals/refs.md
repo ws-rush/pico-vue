@@ -15,4 +15,4 @@ An object holding DOM elements that have the `ref` attribute registered.
 
 ## Details
 
-Refs are populated after the component is mounted. They are not reactive, so you should not use them in templates for data binding.
+Refs are populated when their elements are initialized. They are not reactive, so you should not use them in templates for data binding. A ref on an element with `v-scope` stores the DOM element, not a component instance or scope object.

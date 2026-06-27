@@ -31,9 +31,9 @@ The expression inside `v-effect` is executed immediately, and re-executed whenev
 
 ---
 
-## JavaScript Expressions Support
+## JavaScript Support
 
-`v-effect` supports full JavaScript expressions, including conditionals, function calls, and template literals.
+`v-effect` supports JavaScript statements and expressions, including conditionals, function calls, and template literals, subject to pocket-vue's unsafe-expression validation. For example, direct references to globals such as `window`, `document`, or `fetch` are rejected in template expressions.
 
 ```html
 <div v-scope="{ show: true, msg: 'Hello' }">

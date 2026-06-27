@@ -7,19 +7,19 @@ This page provides a comprehensive reference of the pocket-vue core API.
 The `createApp` function accepts a data object and returns an application instance.
 
 ```typescript
-function createApp(initialData?: object): AppInstance
+function createApp(initialData?: object): App
 ```
 
 - **`initialData`**: Optional object to initialize the application state.
 
-### `AppInstance` Methods
+### `App` Methods
 
-- **`mount(el?: string | Element)`**: Mount the app to the DOM. Returns the app instance.
-- **`unmount()`**: Unmount the app and cleanup resources.
-- **`directive(name: string, def?: Directive)`**: Register a global custom directive.
-- **`use(plugin: any, options?: any)`**: Install a plugin.
+- **`mount(el?: string | Element | null): App | undefined`**: Mount the app to the DOM. Returns `undefined` if a selector string does not match an element.
+- **`unmount(): void`**: Stop reactive effects and run directive cleanup callbacks.
+- **`directive(name: string, def?: Directive): Directive | undefined | App`**: Register a global custom directive, or retrieve a registered directive when `def` is omitted.
+- **`use(plugin: any, options?: any): App`**: Install a plugin.
 
-### `AppInstance` Properties
+### `App` Properties
 
 - **`scope`**: The reactive root scope of the application.
 - **`rootBlocks`**: Internal representation of the mounted roots.
@@ -39,10 +39,10 @@ Creates a reactive proxy of the given object. Re-exported from `@vue/reactivity`
 ### `watchEffect()`
 
 ```typescript
-function watchEffect(effect: () => void): void
+function watchEffect(effect: () => void): ReactiveEffectRunner
 ```
 
-Runs a function and tracks its reactive dependencies. This is a re-export of `effect` from `@vue/reactivity`.
+Runs a function and tracks its reactive dependencies. This is a re-export of `effect` from `@vue/reactivity`, so it returns the effect runner.
 
 > [!NOTE]
 > Only `reactive` and `watchEffect` are re-exported from `pocket-vue`. If you need `ref()`, `computed()`, or other reactivity APIs, import them directly from `@vue/reactivity`.
@@ -164,7 +164,7 @@ Compiles the element and its children only once and skips future updates.
 
 ### `ref`
 
-Registers a reference to an element or component.
+Registers a DOM element reference.
 
 ```html
 <div ref="myDiv"></div>
@@ -178,8 +178,9 @@ Registers a reference to an element or component.
 
 - **`$el`**: The current element the directive is bound to. Available in all directives (`v-on`, `v-bind`, `v-effect`, etc.).
 - **`$root`**: The root element of the `v-scope` component.
-- **`$refs`**: A collection of elements marked with the `ref` directive.
+- **`$refs`**: A collection of DOM elements marked with the `ref` directive.
 - **`$nextTick`**: Function to defer a callback until after the next DOM update cycle.
+
 ### Available in `v-on` inline handlers
 
 - **`$event`**: The original DOM event object, available as a special variable in inline event handler expressions.

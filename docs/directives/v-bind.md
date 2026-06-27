@@ -18,7 +18,7 @@ The `:` character is a shorthand for `v-bind`.
 
 ## Attribute Binding
 
-You can bind any HTML attribute to a reactive value. If the bound value is `null`, `undefined`, or `false`, the attribute will be removed.
+You can bind any HTML attribute to a reactive value. For generic attributes, `null` and `undefined` remove the attribute; other values, including `false`, are written as attribute values.
 
 ```html
 <div v-scope="{ title: 'Hello World', isDisabled: true }">
@@ -28,7 +28,7 @@ You can bind any HTML attribute to a reactive value. If the bound value is `null
 ```
 
 ### Boolean Attributes
-For boolean attributes like `disabled`, `checked`, `required`, etc., the attribute will be present if the expression is truthy and removed if falsy.
+For DOM boolean properties like `disabled`, `checked`, `required`, etc., pocket-vue sets the corresponding property, so truthy values enable the property and falsy values disable it.
 
 ---
 
