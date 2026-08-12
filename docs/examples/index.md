@@ -1,4 +1,4 @@
-# Playground
+# Examples
 
 Pocket Vue examples run live in [MyLab](https://mylab.byrush.me/play). Click any example to open it — ready to edit and share.
 
