@@ -70,4 +70,4 @@ Here is a common pattern: toggling visibility of an element.
 
 - Learn more about [v-scope](/essentials/v-scope)
 - Explore [Directives](/directives/)
-- Try the [Playground](/playground/)
+- Try the [Examples](/examples/)

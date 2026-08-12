@@ -23,7 +23,7 @@ export default withMermaid(
                 { text: 'Guide', link: '/start-here/installation' },
                 { text: 'API', link: '/essentials/api-reference' },
                 { text: 'Directives', link: '/directives/' },
-                { text: 'Playground', link: '/playground/' },
+                { text: 'Examples', link: '/examples/' },
                 { text: 'GitHub', link: 'https://github.com/ws-rush/pocket-vue' }
             ],
 
